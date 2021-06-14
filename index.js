@@ -16,10 +16,18 @@ for(let i=1;i<array2.length;i++)
 string2.push(array2[i].split(","));
 }
  var py= require('./peryearmatches.js');
-py(string1);
+py(string1).then().catch(function(){ 
+    console.log("Error in calling");
+});
  var pw= require('./peryearwiner.js');
-pw(string1);
+pw(string1).then().catch(function(){
+    console.log("Error in calling");
+});
 var et= require('./extrarun.js');
-et(string2);
+et(string2).then().catch(function(){
+    console.log("Error in calling");
+});
  var ec= require('./economicrun.js');
-ec(string2);
+ec(string2).then().catch(function(){
+    console.log("Error in calling");
+});
