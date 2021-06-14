@@ -1,5 +1,6 @@
 module.exports=function extrarun(str)
 {
+  return new Promise(function(resolve,reject){
   var arr=["Sunrisers Hyderabad","Rising Pune Supergiant","Kolkata Knight Riders","Kings XI Punjab","Royal Challengers Bangalore","Mumbai Indians","Delhi Daredevils","Gujarat Lions","Chennai Super Kings","Deccan Chargers","Rajasthan Royals"]
 var ct=[];
 let sum;
@@ -22,4 +23,13 @@ for(j=0;j<arr.length;j++)
 {
   console.log(arr[j]+ " takes "+ct[j]+" extra runs");
 }
+const error =false;
+if(!error)
+{
+  resolved();
+}
+else{
+  reject();
+}
+})
 }
