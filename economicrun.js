@@ -1,5 +1,6 @@
 module.exports=function economic(str)
 {
+  return new Promise(function(resolve,reject){
   var arr=[];
   var ct=[];
 let sum;
@@ -53,4 +54,13 @@ for(j=0;j<10;j++)
 {
 console.log(arr[j]);
 }
+const error =false;
+if(!error)
+{
+  resolved();
+}
+else{
+  reject();
+}
+})
 }
