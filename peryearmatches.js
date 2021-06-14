@@ -1,5 +1,8 @@
 module.exports=function peryear(str)
 {
+  return new Promise(function(resolve,reject){
+    
+ 
 var temp=str[18][1];
 let count=1;
 console.log("Matches played per year:")
@@ -16,4 +19,13 @@ else
 }
 }
 console.log('matches played in '+ temp + ' is: '+count);
+const error =true;
+if(!error)
+{
+  resolved();
+}
+else{
+  reject();
+}
+})
 }
