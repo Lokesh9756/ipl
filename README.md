@@ -1,5 +1,5 @@
 # IPL Project
-[solution](https://github.com/mountblue/mbcjs-16-1-ipl-Lokesh9756)
+[Home](https://github.com/mountblue/mbcjs-16-1-ipl-Lokesh9756)
 ## Table of Contents
 1. [General Info](#general-info)
 2. [Technologies](#technologies)
