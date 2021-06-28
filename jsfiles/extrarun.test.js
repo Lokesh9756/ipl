@@ -1,10 +1,10 @@
 
-var TestFunction= require('./ExtraRunByTeam')
+var TestFunction= require('./extrarun')
 const fs = require("fs");
 const { string } = require('yargs');
 CsvObject = fs.readFileSync("data/deliveries.csv");
 try{
-    if(csvobject)
+    if(CsvObject)
     {
         var TempArray = CsvObject.toString().split("\r");
         var InputDataForTest=TempArray[0].split(",");
@@ -29,7 +29,7 @@ test('test case for null input', () => {
     });
   });
   test('Test case for undefined input', () => {
-    return TestFunction(inputdatafortest,2).then(data => {
+    return TestFunction(InputDataForTest,2).then(data => {
       expect(data).toEqual(!undefined);
     });
   });
@@ -45,6 +45,6 @@ test('test case for null input', () => {
   });
   test('Test case for check output number of player who takes extra run', () => {
     return TestFunction(InputDataForTest,4).then(data => {
-      expect(data.length).toEqual(11);
+      expect(data.length).toEqual(22);
     });
   });
