@@ -100,7 +100,7 @@ catch(err)
 }
 try{
 
- let top10economicbowler= require('./top10economicbowler.js');
+ var top10economicbowler= require('./top10economicbowler.js');
  if(top10economicbowler)
  {
 /*ec(string2,4).then((message) => {

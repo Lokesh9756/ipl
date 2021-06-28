@@ -49,7 +49,7 @@
                       sum=sum+parseInt(Data[j][17]);
                     }
                  }
-                  Runcount[i]=sum;
+                  RunCount[i]=sum;
               }
                 let TempVariable1;
                 var TempVariable2;
@@ -71,7 +71,7 @@
                }
                 const data = JSON.stringify(TempArray);
                 const fs = require('fs');
-                fs.writeFileSync('./output/outputdata.csv', data);
+                fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata.csv', data);
                 return TempArray;
             }
   }
