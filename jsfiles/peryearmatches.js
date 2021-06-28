@@ -1,51 +1,51 @@
 const { string } = require("yargs");
 
-async function peryearmatches(str,choice)
+async function PerYearMatches(InputValue,choice)
 {
  switch(choice)
  {
    case 1:
      {
-       if(str!=null)
+       if(InputValue!=null)
        return true;
        break;
      }
      case 2:
        {
-         if(str!=undefined)
+         if(InputValue!=undefined)
          return true;
          break;
        }
        case 3:
          {
-           if(str!=string)
+           if(InputValue!=string)
            return true;
            break;
          }
          case 4:
            {
-            var temp=str[18][1];
+            var temp=InputValue[18][1];
             let count=1;
-            let array=[];
-            for(let i=19;i<str.length-1;i++)
+            let PerYearMatchesArray=[];
+            for(let i=19;i<InputValue.length-1;i++)
             {
-            if(temp== str[i][1])
+            if(temp== InputValue[i][1])
             count++;
             else
             {
-              array.push(temp,count);
-              temp=str[i][1];
+              PerYearMatchesArray.push(temp,count);
+              temp=InputValue[i][1];
               count=1;
             
             }
             }
-            array.push(temp,count);
-            const data = JSON.stringify(array);
+            PerYearMatchesArray.push(temp,count);
+            const data = JSON.stringify(PerYearMatchesArray);
 const fs = require('fs');
   fs.writeFileSync('output/outputdata.csv', data);
-            return array;
+            return PerYearMatchesArray;
             break;
            }
  } 
 }
-module.exports=peryearmatches
+module.exports=PerYearMatches
