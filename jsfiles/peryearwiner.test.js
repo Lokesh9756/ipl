@@ -1,16 +1,16 @@
 
-var testfunction= require('./peryearwiner')
+var TestFunction= require('./PerYearWinner')
 const fs = require("fs");
 const { string } = require('yargs');
-csvobject = fs.readFileSync("data/matches.csv");
+CsvObject = fs.readFileSync("data/matches.csv");
 try{
-    if(csvobject)
+    if(CsvObject)
     {
-        var temparray = csvobject.toString().split("\r");
-        var inputdatafortest=temparray[0].split(",");
-        for(let i=1;i<temparray.length;i++)
+        var TempArray = CsvObject.toString().split("\r");
+        var InputDataForTest=TempArray[0].split(",");
+        for(let i=1;i<TempArray.length;i++)
         {
-        inputdatafortest.push(temparray[i].split(","));
+        InputDataForTest.push(TempArray[i].split(","));
         }
         
     }
