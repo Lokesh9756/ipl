@@ -118,4 +118,4 @@ catch(err)
 {
   console.log(err);
 }
-Promise.all(top10economicbowler(string1,4),peryearmatches(string1,4),peryearwiner(string1,4),extrarun(string1,4)).then(results =>{console.log("All function run succesfully")}).catch(error =>{console.log("Failed! All function not run succesfully")});
+Promise.all(peryearmatches(string1,4),peryearwiner(string1,4),extrarun(string1,4),top10economicbowler(string1,4)).then(results =>{console.log("All function run succesfully")}).catch(error =>{console.log("Failed! All function not run succesfully")});
