@@ -1,5 +1,5 @@
 
-var TestFunction= require('./PerYearMatches')
+var TestFunction= require('./peryearmatches')
 const fs = require("fs");
 const { string } = require('yargs');
 CsvObject = fs.readFileSync("data/matches.csv");

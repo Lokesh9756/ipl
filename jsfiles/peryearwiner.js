@@ -1,4 +1,4 @@
-async function peryearwiner(str,choice)
+async function PerYearWinner(str,choice)
 {
   switch(choice)
   {
@@ -44,4 +44,4 @@ const fs = require('fs');
             }
           }
         }
-module.exports=peryearwiner;
+module.exports=PerYearWinner;

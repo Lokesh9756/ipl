@@ -1,5 +1,5 @@
 
-var TestFunction= require('./PerYearWinner')
+var TestFunction= require('./peryearwiner')
 const fs = require("fs");
 const { string } = require('yargs');
 CsvObject = fs.readFileSync("data/matches.csv");
@@ -24,27 +24,27 @@ catch(err)
 }
 
 test('test case for null input', () => {
-    return testfunction(inputdatafortest,1).then(data => {
+    return TestFunction(InputDataForTest,1).then(data => {
       expect(data).toEqual(!null);
     });
   });
   test('Test case for undefined input', () => {
-    return testfunction(inputdatafortest,2).then(data => {
+    return TestFunction(InputDataForTest,2).then(data => {
       expect(data).toEqual(!undefined);
     });
   });
   test('Test case for correct input', () => {
-    return testfunction(inputdatafortest,3).then(data => {
+    return TestFunction(InputDataForTest,3).then(data => {
       expect(data).toEqual(true);
     });
   });
   test('Test case for incorrect input', () => {
-    return testfunction(5,3).then(data => {
+    return TestFunction(5,3).then(data => {
       expect(data).toEqual(!string);
     });
   });
   test('Test case for check output number of team', () => {
-    return testfunction(inputdatafortest,4).then(data => {
+    return TestFunction(InputDataForTest,4).then(data => {
       expect(data.length).toEqual(11);
     });
   });
