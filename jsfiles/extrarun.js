@@ -22,7 +22,6 @@
           }
           case 4:
             {
-              console.log(Data[21]);
   var TeamArray=["Sunrisers Hyderabad","Rising Pune Supergiant","Kolkata Knight Riders","Kings XI Punjab","Royal Challengers Bangalore","Mumbai Indians","Delhi Daredevils","Gujarat Lions","Chennai Super Kings","Deccan Chargers","Rajasthan Royals"]
 var ExtraRunCount=[];
 let sum;
@@ -43,7 +42,7 @@ ExtraRunCount[j]=sum;
 let ExtraRunByTeam=[];
 for(j=0;j<TeamArray.length;j++)
 {
-  ExtraRunByTeam.push(TeamArray[j],ct[j]);
+  ExtraRunByTeam.push(TeamArray[j],ExtraRunCount[j]);
 }
 const data = JSON.stringify(ExtraRunByTeam);
 const fs = require('fs');

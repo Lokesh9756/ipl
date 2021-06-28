@@ -100,8 +100,8 @@ catch(err)
 }
 try{
 
- let ec= require('./top10economicbowler.js');
- if(ec)
+ let top10economicbowler= require('./top10economicbowler.js');
+ if(top10economicbowler)
  {
 /*ec(string2,4).then((message) => {
     console.log("successfully calculate top 10 bowler");
@@ -118,4 +118,4 @@ catch(err)
 {
   console.log(err);
 }
-Promise.all(peryearmatches(string1,4),peryearwiner(string1,4)).then(results =>{console.log("All function run succesfully")}).catch(error =>{console.log("Failed! All function not run succesfully")});
+Promise.all(top10economicbowler(string1,4),peryearmatches(string1,4),peryearwiner(string1,4),extrarun(string1,4)).then(results =>{console.log("All function run succesfully")}).catch(error =>{console.log("Failed! All function not run succesfully")});

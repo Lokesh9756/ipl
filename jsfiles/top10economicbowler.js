@@ -1,4 +1,4 @@
- async function Top10EconomicBowler(Data,choice)
+ async function top10economicbowler(Data,choice)
 {
   switch(choice)
   {
@@ -76,4 +76,4 @@
             }
   }
 }
-module.exports=Top10EconomicBowler;
+module.exports=top10economicbowler;
