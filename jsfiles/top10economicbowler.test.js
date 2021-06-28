@@ -2,15 +2,15 @@
 var testfunction= require('./top10economicbowler')
 const fs = require("fs");
 const { string } = require('yargs');
-csvobject = fs.readFileSync("data/deliveries.csv");
+CsvObject = fs.readFileSync("data/deliveries.csv");
 try{
-    if(csvobject)
+    if(CsvObject)
     {
-        var temparray = csvobject.toString().split("\r");
-        var inputdatafortest=temparray[0].split(",");
-        for(let i=1;i<temparray.length;i++)
+        var TempStringVariable = CsvObject.toString().split("\r");
+        var InputDataForTest=TempStringVariable[0].split(",");
+        for(let i=1;i<TempStringVariable.length;i++)
         {
-        inputdatafortest.push(temparray[i].split(","));
+        InputDataForTest.push(TempStringVariable[i].split(","));
         }
         
     }
@@ -24,17 +24,17 @@ catch(err)
 }
 
 test('test case for null input', () => {
-    return testfunction(inputdatafortest,1).then(data => {
+    return testfunction(InputDataForTest,1).then(data => {
       expect(data).toEqual(!null);
     });
   });
   test('Test case for undefined input', () => {
-    return testfunction(inputdatafortest,2).then(data => {
+    return testfunction(InputDataForTest,2).then(data => {
       expect(data).toEqual(!undefined);
     });
   });
   test('Test case for correct input', () => {
-    return testfunction(inputdatafortest,3).then(data => {
+    return testfunction(InputDataForTest,3).then(data => {
       expect(data).toEqual(true);
     });
   });
@@ -44,7 +44,7 @@ test('test case for null input', () => {
     });
   });
   test('Test case for check output count of economic bowler', () => {
-    return testfunction(inputdatafortest,4).then(data => {
+    return testfunction(InputDataForTest,4).then(data => {
       expect(data.length).toEqual(99);
     });
   });

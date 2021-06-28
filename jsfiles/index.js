@@ -1,4 +1,8 @@
 const fs = require("fs");
+var Promise = require('promise');
+const extrarun = require("./extrarun.js");
+const peryearmatches = require("./peryearmatches.js");
+const peryearwiner = require("./peryearwiner.js");
 csv1 = fs.readFileSync("matches.csv");
 csv2 = fs.readFileSync("deliveries.csv");
 try{ 
@@ -44,11 +48,11 @@ try {
  let peryearmatchesfunction= require('./peryearmatches.js');
 if(peryearmatchesfunction)
 {
- peryearmatchesfunction(string1).then(function(){
+/* peryearmatchesfunction(string1,4).then(function(){
      console.log("Successfully calculated count of per year matches")
  }).catch(function(){ 
     console.log("Failed to calculate count of per year matches");
-});
+});*/
 }
 else{
     throw "error peryearmatches file not found";
@@ -62,11 +66,11 @@ try{
  let peryearwinnerfunction= require('./peryearwiner.js');
 if(peryearwinnerfunction)
 {
- peryearwinnerfunction(string1).then(function(){
+ /*peryearwinnerfunction(string1,4).then(function(){
      console.log("Successfully calculated count of per year winner teams")
  }).catch(function(){
     console.log("Failed to calculate count of per year winner teams");
-});
+});*/
 }
 else{
     throw "error peryearwiner file not found"
@@ -77,14 +81,14 @@ catch(err)
     console.log(err);
 }
 try{
-let extrarunfunction= require('./extrarun.js');
-if(extrarunfunction)
+let extrarun= require('./extrarun.js');
+if(extrarun)
 {
-extrarunfunction(string2).then(function(){
+/*extrarunfunction(string2,4).then(function(){
 console.log("Successfully calculated extra run of player")
 }).catch(function(){
     console.log("Failed to calculate extra run of player");
-});
+});*/
 }
 else{
     throw "error extrarun file not found"
@@ -99,11 +103,11 @@ try{
  let ec= require('./top10economicbowler.js');
  if(ec)
  {
-ec(string2).then((message) => {
+/*ec(string2,4).then((message) => {
     console.log("successfully calculate top 10 bowler");
 }).catch((message) =>{
     console.log("Failed in calculate top 10 bowler");
-});
+});*/
  }
  else
  {
@@ -114,3 +118,4 @@ catch(err)
 {
   console.log(err);
 }
+Promise.all(peryearmatches(string1,4),peryearwiner(string1,4)).then(results =>{console.log("All function run succesfully")}).catch(error =>{console.log("Failed! All function not run succesfully")});

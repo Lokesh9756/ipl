@@ -42,7 +42,7 @@ async function peryearmatches(str,choice)
             array.push(temp,count);
             const data = JSON.stringify(array);
 const fs = require('fs');
-  fs.writeFileSync('output/outputdata.csv', data);
+  fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata.csv', data);
             return array;
             break;
            }

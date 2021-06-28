@@ -1,47 +1,50 @@
-async function PerYearWinner(str,choice)
+async function peryearwiner(Data,choice)
 {
   switch(choice)
   {
     case 1:
       {
-        if(str!=null)
+        if(Data!=null)
         return true;
         break;
       }
       case 2:
         {
-          if(str!=undefined)
+          if(Data!=undefined)
           return true;
           break;
         }
         case 3:
           {
-            if(str!=String)
+            if(Data!=String)
             return true;
             break;
           }
           case 4:
             {
-var arr=["Sunrisers Hyderabad","Rising Pune Supergiant","Kolkata Knight Riders","Kings XI Punjab","Royal Challengers Bangalore","Mumbai Indians","Delhi Daredevils","Gujarat Lions","Chennai Super Kings","Deccan Chargers","Rajasthan Royals"]
-var ct=[];
-let count=0;
-for(let j=0;j<arr.length;j++)
-{
-  count=0;
-for(let i=19;i<str.length-1;i++)
-{
-if(arr[j]==str[i][10])
-count++;
-}
-ct[j]=count;
-
-}
-
-const data = JSON.stringify(arr);
-const fs = require('fs');
-  fs.writeFileSync('outputdata.csv', data);
-  return arr;
+              var temp=Data[18][1];
+              var tempTeam=Data[18][10];
+              let count=1;
+              let array=[];
+              for(let i=19;i<Data.length-1;i++)
+              {
+              if(temp == Data[i][1] )
+              count++;
+              else
+              {
+                array.push(temp,count);
+                temp=Data[i][1];
+                count=1;
+              
+              }
+              }
+              array.push(temp,count);
+              const data = JSON.stringify(array);
+              const fs = require('fs');
+              fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata.csv', data);
+              return array;
+              break;
             }
-          }
-        }
-module.exports=PerYearWinner;
+  }
+}
+module.exports=peryearwiner;
