@@ -41,7 +41,7 @@ async function peryearwiner(Data,choice)
               array.push(temp,count);
               const data = JSON.stringify(array);
               const fs = require('fs');
-              fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata.csv', data);
+              fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata2.csv', data);
               return array;
               break;
             }

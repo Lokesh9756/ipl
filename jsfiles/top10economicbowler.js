@@ -71,7 +71,7 @@
                }
                 const data = JSON.stringify(TempArray);
                 const fs = require('fs');
-                fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata.csv', data);
+                fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata4.csv', data);
                 return TempArray;
             }
   }

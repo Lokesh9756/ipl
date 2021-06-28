@@ -46,7 +46,7 @@ for(j=0;j<TeamArray.length;j++)
 }
 const data = JSON.stringify(ExtraRunByTeam);
 const fs = require('fs');
-  fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata.csv', data);
+  fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata3.csv', data);
 return ExtraRunByTeam;
 }
   }
