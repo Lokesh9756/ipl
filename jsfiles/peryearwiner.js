@@ -23,7 +23,6 @@ async function peryearwiner(Data,choice)
           case 4:
             {
               var temp=Data[18][1];
-              var tempTeam=Data[18][10];
               let count=1;
               let array=[];
               for(let i=19;i<Data.length-1;i++)

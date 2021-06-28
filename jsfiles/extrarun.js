@@ -35,9 +35,8 @@ for(let i=21;i<Data.length-1;i++)
 if(TeamArray[j]==Data[i][2])
 sum+=parseInt(Data[i][16]);
 }
-ExtraRunCount[j]=sum;
-
 }
+ExtraRunCount[j]=sum;
 }
 let ExtraRunByTeam=[];
 for(j=0;j<TeamArray.length;j++)
