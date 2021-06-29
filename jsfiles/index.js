@@ -45,7 +45,7 @@ try
     }
  try 
   {
-     var PerYearMatchesFunction= require('./peryearmatches.js');
+     var PerYearMatchesFunction= require('./PerYearMatches.js');
      if(PerYearMatchesFunction)
        {
          console.log("Peryearmatches function file fetch succesfully");
@@ -61,7 +61,7 @@ try
     }
 try
    {
-     var PerYearWinnerFunction= require('./peryearwiner.js');
+     var PerYearWinnerFunction= require('./PerYearWinner.js');
      if(PerYearWinnerFunction)
        {
          console.log("Peryearwinner function file fetch succesfully");
@@ -77,7 +77,7 @@ try
     }
 try
  {
-   var ExtraRunFunction= require('./extrarun.js');
+   var ExtraRunFunction= require('./ExtraRun2016.js');
    if(ExtraRunFunction)
      {
        console.log("Extrarun function file fetch succesfully");
@@ -93,7 +93,7 @@ try
     }
 try
   {
-    var Top10EconomicBowlerFunction= require('./top10economicbowler.js');
+    var Top10EconomicBowlerFunction= require('./Top10EconomicBowler2015.js');
     if(Top10EconomicBowlerFunction)
      {
       console.log("Top10economic bowler function file fetch succesfully");
