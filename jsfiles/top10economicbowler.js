@@ -1,4 +1,4 @@
- async function top10economicbowler(Data,choice)
+ async function Top10EconomicBowler2015(Data,choice)
 {
   switch(choice)
   {
@@ -72,8 +72,9 @@
                 const data = JSON.stringify(TempArray);
                 const fs = require('fs');
                 fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata4.csv', data);
+                console.log("Top 10 Bowler of year 2015 successfully write to the output file");
                 return TempArray;
             }
   }
 }
-module.exports=top10economicbowler;
+module.exports=Top10EconomicBowler2015;

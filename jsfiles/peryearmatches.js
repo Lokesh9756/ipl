@@ -1,51 +1,63 @@
 const { string } = require("yargs");
 
-async function peryearmatches(str,choice)
+async function PerYearMatches(Data,choice)
 {
  switch(choice)
  {
    case 1:
      {
-       if(str!=null)
+       if(Data!=null)
        return true;
        break;
      }
      case 2:
        {
-         if(str!=undefined)
+         if(Data!=undefined)
          return true;
          break;
        }
        case 3:
          {
-           if(str!=string)
+           if(Data!=string)
            return true;
            break;
          }
          case 4:
            {
-            var temp=str[18][1];
-            let count=1;
-            let array=[];
-            for(let i=19;i<str.length-1;i++)
-            {
-            if(temp== str[i][1])
-            count++;
-            else
-            {
-              array.push(temp,count);
-              temp=str[i][1];
-              count=1;
-            
+            var YearArray=[];
+            let j=0;
+            for(let i=18;i<Data.length-1;i++)
+             {
+               if(Data[i][1])
+               {
+               if(YearArray.includes(Data[i][1]))
+                 {}
+               else
+               {
+                 YearArray[j]=Data[i][1];
+                 j++;
+               }
+              }
             }
+            let MatchesCount=0;
+            let MatchesArray=[];
+            for(j=0;j<YearArray.length;j++)
+            {
+              MatchesCount=0;
+            for(let i=19;i<Data.length;i++)
+            {
+            if(YearArray[j] == Data[i][1])
+            MatchesCount++;
             }
-            array.push(temp,count);
-            const data = JSON.stringify(array);
-const fs = require('fs');
-  fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata1.csv', data);
-            return array;
+            MatchesArray.push(YearArray[j],MatchesCount);
+           }
+            const data = JSON.stringify(MatchesArray);
+            const fs = require('fs');
+            fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata1.csv', data);
+            console.log("PerYear matches count successfully write to the output file");
+            return MatchesArray;
             break;
            }
  } 
 }
-module.exports=peryearmatches
+module.exports=PerYearMatches;

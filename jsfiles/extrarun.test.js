@@ -45,6 +45,6 @@ test('test case for null input', () => {
   });
   test('Test case for check output number of player who takes extra run', () => {
     return TestFunction(InputDataForTest,4).then(data => {
-      expect(data.length).toEqual(22);
+      expect(data.length).toEqual(18);
     });
   });
