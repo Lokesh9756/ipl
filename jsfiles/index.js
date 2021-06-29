@@ -1,12 +1,14 @@
 const fs = require("fs");
 var Promise = require('promise');
-Csv1 = fs.readFileSync("matches.csv");
-Csv2 = fs.readFileSync("deliveries.csv");
+//import matcches data from  matches csv file
+Csv1 = fs.readFileSync("/home/lokesh/Desktop/ipl/data/matches.csv");
+//import deliveries data from deliveries data file
+Csv2 = fs.readFileSync("/home/lokesh/Desktop/ipl/data/deliveries.csv");
   try
   { 
     if(Csv1)
      {
-   
+   //convert matches csv object data into string
      let Array1 = Csv1.toString().split("\r");
      var string1=Array1[0].split(",");
      for(let i=1;i<Array1.length;i++)
@@ -27,6 +29,7 @@ try
  {
   if(Csv2)
     {
+    //convert deliveries csv object data into string
      let Array2=Csv2.toString().split("\r");
      var string2=Array2[0].split(",");
       for(let i=1;i<Array2.length;i++)
@@ -45,6 +48,7 @@ try
     }
  try 
   {
+    //import function file peryearmatches
      var PerYearMatchesFunction= require('./PerYearMatches.js');
      if(PerYearMatchesFunction)
        {
@@ -61,6 +65,7 @@ try
     }
 try
    {
+     //import function file peryearwinner
      var PerYearWinnerFunction= require('./PerYearWinner.js');
      if(PerYearWinnerFunction)
        {
@@ -77,6 +82,7 @@ try
     }
 try
  {
+   //import function file extrarun2016
    var ExtraRunFunction= require('./ExtraRun2016.js');
    if(ExtraRunFunction)
      {
@@ -93,6 +99,7 @@ try
     }
 try
   {
+    //import top10economic bowler function file
     var Top10EconomicBowlerFunction= require('./Top10EconomicBowler2015.js');
     if(Top10EconomicBowlerFunction)
      {
@@ -107,4 +114,5 @@ catch(err)
   {
     console.log(err);
   }
+  //call all function by using promise all
 Promise.all(PerYearMatchesFunction(string1,4),PerYearWinnerFunction(string1,4),ExtraRunFunction(string2,4),Top10EconomicBowlerFunction(string2,4)).then(results =>{console.log("All function run succesfully")}).catch(error =>{console.log("Failed! All function not run succesfully")});

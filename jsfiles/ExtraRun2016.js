@@ -2,26 +2,31 @@
 {
   switch(choice)
   {
+    //case 1 for checking null value
     case 1:
       {
         if(Data!=null)
         return true;
         break;
       }
+      //case 2 for checking undefined value
       case 2:
         {
           if(Data!=undefined)
           return true;
           break;
         }
+        // case 3 for checking incoorect input value
         case 3:
           {
             if(Data!=String)
             return true;
             break;
           }
+          //case 4 for calculate result with correct input value
           case 4:
             {
+              //Array for holding teams
               var TeamArray=[];
               let j=0;
               for(let i=21;i<Data.length-1;i++)
@@ -37,7 +42,7 @@
                  }
                 }
              }
- 
+             //Array for hold count of extrarun per team
                 var ExtraRunCount=[];
                 let sum;
                 for(let j=0;j<TeamArray.length;j++)
@@ -58,6 +63,7 @@
                  {
                    ExtraRunByTeam.push(TeamArray[j],ExtraRunCount[j]);
                  }
+                 //convert Array data into string using JSON
                const data = JSON.stringify(ExtraRunByTeam);
                const fs = require('fs');
                fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata3.csv', data);
