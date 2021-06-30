@@ -4,13 +4,27 @@
   "description": "In thhis project two .csv file given for data by which four operation performed on data and print output. #### Following are the operation to perform : 1. Number of matches played per year for all the years in IPL. 2. Number of matches won per team per year in IPL. 3. Extra runs conceded per team in the year 2016 4. Top 10 economical bowlers in the year 2015",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.0.4"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-wesbos": "^1.0.1",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^27.0.4",
+    "prettier": "^2.3.2"
   },
   "dependencies": {
     "promise": "^8.1.0"
