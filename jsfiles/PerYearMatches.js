@@ -1,5 +1,3 @@
-const { string } = require('yargs');
-
 async function PerYearMatches(Data, choice) {
   switch (choice) {
     // Case 1 to test null value
@@ -9,12 +7,12 @@ async function PerYearMatches(Data, choice) {
     }
     // Case 2 to test undefined value
     case 2: {
-      if (Data != undefined) return true;
+      if (Data !== undefined) return true;
       break;
     }
     // Case 3 to test incorrect input value
     case 3: {
-      if (Data != string) return true;
+      if (Data !== string) return true;
       break;
     }
     // Case 4 to test correct value
@@ -46,7 +44,7 @@ async function PerYearMatches(Data, choice) {
       const data = JSON.stringify(MatchesArray);
       const fs = require('fs');
       // write data to output file
-      fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata1.csv', data);
+      fs.writeFileSync('../output/outputdata1.csv', data);
       console.log(
         'PerYear matches count successfully write to the output file'
       );

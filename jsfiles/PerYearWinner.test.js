@@ -3,7 +3,7 @@ const fs = require('fs');
 const { string } = require('yargs');
 const TestFunction = require('./PerYearWinner');
 // Read data from data file using file stream
-CsvObject = fs.readFileSync('data/matches.csv');
+const CsvObject = fs.readFileSync('data/matches.csv');
 try {
   if (CsvObject) {
     // change csv object to string
@@ -13,7 +13,7 @@ try {
       InputDataForTest.push(TempArray[i].split(','));
     }
   } else {
-    throw 'error in importing data from csv file';
+    throw new Error('error in importing data from csv file');
   }
 } catch (err) {
   console.log(err);

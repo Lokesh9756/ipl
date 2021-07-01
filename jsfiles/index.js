@@ -1,9 +1,9 @@
 const fs = require('fs');
 const Promise = require('promise');
 // import matcches data from  matches csv file
-const Csv1 = fs.readFileSync('/home/lokesh/Desktop/ipl/data/matches.csv');
+const Csv1 = fs.readFileSync('../data/matches.csv');
 // import deliveries data from deliveries data file
-const Csv2 = fs.readFileSync('/home/lokesh/Desktop/ipl/data/deliveries.csv');
+const Csv2 = fs.readFileSync('../data/deliveries.csv');
 try {
   if (Csv1) {
     // convert matches csv object data into string

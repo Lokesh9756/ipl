@@ -3,7 +3,7 @@ const fs = require('fs');
 const { string } = require('yargs');
 const testfunction = require('./Top10EconomicBowler2015');
 // Read the data file using filestream
-CsvObject = fs.readFileSync('data/deliveries.csv');
+const CsvObject = fs.readFileSync('data/deliveries.csv');
 try {
   if (CsvObject) {
     // convert object data into string
@@ -13,7 +13,7 @@ try {
       InputDataForTest.push(TempStringVariable[i].split(','));
     }
   } else {
-    throw 'error in importing data from csv file';
+    throw new Error('error in importing data from csv file');
   }
 } catch (err) {
   console.log(err);

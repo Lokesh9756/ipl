@@ -48,7 +48,7 @@ async function ExtraRun2016(Data, choice) {
       // convert Array data into string using JSON
       const data = JSON.stringify(ExtraRunByTeam);
       const fs = require('fs');
-      fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata3.csv', data);
+      fs.writeFileSync('../output/outputdata3.csv', data);
       console.log(
         'Extra run of year 2016 successfully write to the output file'
       );

@@ -5,11 +5,11 @@ async function Top10EconomicBowler2015(Data, choice) {
       break;
     }
     case 2: {
-      if (Data != undefined) return true;
+      if (Data !== undefined) return true;
       break;
     }
     case 3: {
-      if (Data != String) return true;
+      if (Data !== String) return true;
       break;
     }
     case 4: {
@@ -17,10 +17,11 @@ async function Top10EconomicBowler2015(Data, choice) {
       const RunCount = [];
       let sum;
       let j = 0;
-      for (let i = 21; i < Data.length - 1; i++) {
+      let i;
+      for (i = 21; i < Data.length - 1; i++) {
         if (Data[i][0] >= 518 && Data[i][0] <= 576) {
-          if (TempArray.includes(Data[i][8])) {
-          } else {
+          if (TempArray.includes(Data[i][8]));
+          else {
             TempArray[j] = Data[i][8];
             j++;
           }
@@ -29,7 +30,7 @@ async function Top10EconomicBowler2015(Data, choice) {
       for (i = 0; i < TempArray.length; i++) {
         sum = 0;
         for (j = 21; j < TempArray.length - 2; j++) {
-          if (TempArray[i] == Data[j][8]) {
+          if (TempArray[i] === Data[j][8]) {
             sum += parseInt(Data[j][17]);
           }
         }
@@ -52,11 +53,14 @@ async function Top10EconomicBowler2015(Data, choice) {
       }
       const data = JSON.stringify(TempArray);
       const fs = require('fs');
-      fs.writeFileSync('/home/lokesh/Desktop/ipl/output/outputdata4.csv', data);
+      fs.writeFileSync('../output/outputdata4.csv', data);
       console.log(
         'Top 10 Bowler of year 2015 successfully write to the output file'
       );
       return TempArray;
+    }
+    default: {
+      console.log('select correct choice');
     }
   }
 }
